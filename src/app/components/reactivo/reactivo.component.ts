@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -27,6 +27,7 @@ export class ReactivoComponent implements OnInit {
   }
 
   onCancel() {
+    this.formularioReactivo.reset();
     this.mostrarSnackBar('Formulario reactivo: Cancelado');
   }
 

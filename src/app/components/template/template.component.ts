@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-template',
@@ -14,7 +15,10 @@ export class TemplateComponent {
     }
   }
 
+  @ViewChild('formularioTemplate') formularioTemplate!: NgForm;
+
   onCancel() {
+    this.formularioTemplate.reset();
     alert('Formulario por template: Cancelado');
   }
 }
