@@ -1,0 +1,24 @@
+<h1 class="text-center">Formulario Reactivo</h1>
+<form [formGroup]="formularioReactivo" (ngSubmit)="onSubmit()" class="formulario">
+    <label for="cedula">Cédula:</label>
+    <input type="text" id="cedula" formControlName="cedula" required>
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" formControlName="nombre" required>
+
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" formControlName="fecha" required>
+
+    <label for="ciudad">Ciudad:</label>
+    <select id="ciudad" formControlName="ciudad" required>
+    <option value="" disabled selected>Selecciona una ciudad</option>
+    <option value="Machala">Machala</option>
+    <option value="Pasaje">Pasaje</option>
+    <option value="Cuenca">Cuenca</option>
+  </select>
+
+    <div class="botones">
+        <button type="submit" class="btn-guardar">Guardar</button>
+        <button type="button" (click)="onCancel()" class="btn-cancelar">Cancelar</button>
+    </div>
+</form>

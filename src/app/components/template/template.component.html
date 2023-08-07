@@ -1,0 +1,25 @@
+<h1 class="text-center">Formulario Template</h1>
+
+<form #formularioTemplate="ngForm" (ngSubmit)="onSubmit(formularioTemplate)" class="formulario">
+    <label for="cedula">Cédula:</label>
+    <input type="text" id="cedula" name="cedula" [(ngModel)]="formularioTemplate.value.cedula" required>
+
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" [(ngModel)]="formularioTemplate.value.nombre" required>
+
+    <label for="fecha">Fecha:</label>
+    <input type="date" id="fecha" name="fecha" [(ngModel)]="formularioTemplate.value.fecha" required>
+
+    <label for="ciudad">Ciudad:</label>
+    <select id="ciudad" name="ciudad" [(ngModel)]="formularioTemplate.value.ciudad" required>
+    <option value="" disabled selected>Selecciona una ciudad</option>
+    <option value="Machala">Machala</option>
+    <option value="Pasaje">Pasaje</option>
+    <option value="Cuenca">Cuenca</option>
+  </select>
+
+    <div class="botones">
+        <button type="submit" class="btn-guardar">Guardar</button>
+        <button type="button" (click)="onCancel()" class="btn-cancelar">Cancelar</button>
+    </div>
+</form>
